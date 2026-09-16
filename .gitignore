@@ -1,0 +1,13 @@
+# OS clutter
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+
+# Local backups you might drop in this folder while testing
+formsheet-backup-*.json
+
+# Packaged zip if you build one locally
+*.zip

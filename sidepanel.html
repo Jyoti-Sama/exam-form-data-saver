@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formsheet</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <div id="lockScreen" class="lock-screen">
+      <div class="lock-card">
+        <h1 class="lock-title">Formsheet</h1>
+        <p class="lock-sub" id="lockSub">Enter your PIN to open it.</p>
+        <input
+          id="lockInput"
+          class="lock-input"
+          type="password"
+          inputmode="numeric"
+          autocomplete="off"
+          maxlength="12"
+          aria-label="PIN"
+        />
+        <p class="lock-error" id="lockError" role="alert"></p>
+        <button id="lockSubmit" class="solid" type="button">Continue</button>
+        <button id="lockForgot" class="ghost small" type="button" hidden>
+          Forgot PIN? Reset and start over
+        </button>
+      </div>
+    </div>
+
+    <div id="app" hidden>
+    <header class="top">
+      <div class="top-row">
+        <h1>Formsheet</h1>
+        <div class="top-actions">
+          <button id="lockNow" class="ghost small" type="button" title="Lock the panel">
+            Lock
+          </button>
+          <button id="editToggle" class="ghost" type="button" aria-pressed="false">
+            Edit
+          </button>
+        </div>
+      </div>
+      <div class="search-wrap">
+        <input
+          id="search"
+          type="search"
+          placeholder="Search a detail"
+          autocomplete="off"
+          aria-label="Search your saved details"
+        />
+      </div>
+      <p class="hint" id="modeHint">
+        Click a value to copy it. Click into a box on the form first, then press
+        Fill to send it there.
+      </p>
+    </header>
+
+    <main id="groups" aria-live="polite"></main>
+
+    <section class="calc" id="calcSection">
+      <div class="calc-head">
+        <h2>Semester marks</h2>
+        <button id="calcToggle" class="ghost small" type="button">Show</button>
+      </div>
+      <div class="calc-body" id="calcBody" hidden>
+        <table class="sem-table">
+          <thead>
+            <tr>
+              <th scope="col">Semester</th>
+              <th scope="col">SGPA</th>
+              <th scope="col">Credits</th>
+              <th><span class="sr-only">Remove</span></th>
+            </tr>
+          </thead>
+          <tbody id="semRows"></tbody>
+        </table>
+        <button id="addSem" class="ghost small" type="button">Add semester</button>
+        <div class="calc-out">
+          <div class="calc-line">
+            <span>Overall CGPA</span>
+            <strong id="cgpaOut">—</strong>
+          </div>
+          <div class="calc-line muted">
+            <span>&times; 9.5</span><span id="pc95">—</span>
+          </div>
+          <div class="calc-line muted">
+            <span>&times; 10 &minus; 7.5</span><span id="pc10">—</span>
+          </div>
+          <p class="hint tight">
+            Two common conversion rules. Check which one your university prints
+            on the marksheet before you use it on a form.
+          </p>
+          <button id="saveCgpa" class="solid small" type="button">
+            Save CGPA as a detail
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bottom">
+      <button id="addGroup" class="ghost small" type="button" hidden>
+        Add section
+      </button>
+      <div class="bottom-row">
+        <button id="exportBtn" class="ghost small" type="button">Back up</button>
+        <button id="importBtn" class="ghost small" type="button">Restore</button>
+        <input id="importFile" type="file" accept="application/json" hidden />
+      </div>
+      <div class="bottom-row">
+        <button id="pinBtn" class="ghost small" type="button">Set a PIN</button>
+        <button id="pinRemoveBtn" class="ghost small" type="button" hidden>
+          Remove PIN
+        </button>
+      </div>
+      <p class="hint tight">
+        Everything stays on this computer, inside the extension's own storage.
+      </p>
+    </footer>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="sidepanel.js"></script>
+  </body>
+</html>
