@@ -1,4 +1,4 @@
-# Formsheet
+# Exam Form Data Saver
 
 A side-panel extension for Edge that holds the details you keep retyping into
 exam application forms — board marks, roll numbers, percentages, semester CGPA —
@@ -6,14 +6,14 @@ and puts any of them into the form in one click.
 
 ## Install it in Edge
 
-1. Unzip this folder somewhere permanent, like `D:\formsheet`. Edge reads the
-   extension from this folder every time it starts, so don't delete it.
+1. Unzip this folder somewhere permanent, like `D:\\exam-form-data-saver`. Edge reads the
+extension from this folder every time it starts, so don't delete it.
 2. Open `edge://extensions`.
 3. Turn on **Developer mode** (switch at the bottom left).
-4. Click **Load unpacked** and pick the `formsheet` folder — the one that has
-   `manifest.json` directly inside it.
-5. Click the puzzle-piece icon in the toolbar and pin Formsheet so the button
-   stays visible.
+4. Click **Load unpacked** and pick the `exam-form-data-saver` folder — the one that has
+`manifest.json` directly inside it.
+5. Click the puzzle-piece icon in the toolbar and pin exam-form-data-saver so the button
+stays visible.
 
 Click the toolbar button, or press **Ctrl+Shift+Y**, and the panel opens on the
 right side of the window, next to the form you're filling. It stays open while
@@ -71,9 +71,12 @@ worth thinking twice about for anything you'd not leave in a text file.
 
 ## Files
 
-| File | What it does |
-| --- | --- |
-| `manifest.json` | Extension setup and permissions |
-| `background.js` | Makes the toolbar button open the side panel |
-| `sidepanel.html/.css/.js` | The panel itself |
-| `content.js` | Runs on the page, remembers the box you clicked, fills it |
+|File|What it does|
+|-|-|
+|`manifest.json`|Extension setup and permissions|
+|`background.js`|Makes the toolbar button open the side panel|
+|`sidepanel.html/.css/.js`|The panel itself|
+|`content.js`|Runs on the page, remembers the box you clicked, fills it|
+
+
+
